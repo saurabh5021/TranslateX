@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "974264983826",
+    "project_id": "translatex-a93a3",
+    "storage_bucket": "translatex-a93a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974264983826:android:603285d1b7d1bde8d2d3cb",
+        "android_client_info": {
+          "package_name": "com.example.translatex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974264983826-kl2t71137vo48conghq1v4ecq7n8db87.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD36YFJWFcmaFcXUMBX-EAj5zh_XiENnG8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "974264983826-kl2t71137vo48conghq1v4ecq7n8db87.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

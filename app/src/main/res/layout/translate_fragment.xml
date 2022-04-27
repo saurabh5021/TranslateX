@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:id="@+id/Heading"
+        android:layout_width="419dp"
+        android:layout_height="83dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.012">
+
+        <ImageView
+            android:layout_width="62dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="4dp"
+            android:text="@string/app_name"
+            android:textColor="@color/red"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@+id/Heading">
+
+        <Spinner
+            android:id="@+id/sourceLangSelector"
+            style="@style/Widget.AppCompat.Spinner.DropDown"
+            android:layout_width="81dp"
+            android:layout_height="70dp"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_background"
+            android:gravity="center"
+            android:padding="3dp"
+            android:soundEffectsEnabled="true" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSwitchLang"
+            style="@style/IconOnlyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/ic_button_background"
+            android:text=""
+            android:textStyle="bold"
+            app:backgroundTint="@color/red"
+            app:icon="@drawable/ic_baseline_compare_arrows_24"
+            app:iconSize="38dp"
+            app:tint="@color/black" />
+
+        <Spinner
+            android:id="@+id/targetLangSelector"
+            style="@style/Widget.AppCompat.Spinner.DropDown"
+            android:layout_width="81dp"
+            android:layout_height="70dp"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_background"
+            android:gravity="center"
+            android:soundEffectsEnabled="true" />
+
+    </LinearLayout>
+
+    <ToggleButton
+        android:id="@+id/buttonSyncSource"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="126dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="78dp"
+        android:textOff="@string/download_model"
+        android:textOn="@string/delete_model"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.019" />
+
+    <ToggleButton
+        android:id="@+id/buttonSyncTarget"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="76dp"
+        android:textOff="@string/download_model"
+        android:textOn="@string/delete_model"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/downloadedModels"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@+id/buttonSyncSource"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.017" />
+
+    <TextView
+        android:id="@+id/downloadedModels"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/downloaded_models_label"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSyncSource"
+        app:layout_constraintVertical_bias="0.021" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="35dp"
+        android:padding="5dp"
+        android:textColorHint="@color/black"
+        app:hintTextColor="@color/black"
+        app:layout_constraintTop_toTopOf="@+id/downloadedModels">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sourceText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:hint="@string/source_text_hint"
+            android:inputType="none|text|textMultiLine|textImeMultiLine"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="112dp"
+            android:gravity="center"
+            android:text="OR"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/ORHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintBottom_toBottomOf="@+id/TranslatedTextHeading"
+
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintVertical_bias="0.467">
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="OR"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="50dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/mic"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp"
+            android:src="@drawable/ic_mic"
+            app:tint="@color/black" />
+
+        <ImageView
+            android:id="@+id/camera"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="3dp"
+            android:src="@drawable/ic_camera"
+            app:tint="@color/black" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/TranslatedTextHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:text="@string/translated_text"
+        android:textColor="@color/red"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintBottom_toTopOf="@+id/targetText" />
+
+    <TextView
+        android:id="@+id/targetText"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="392dp"
+        android:layout_height="208dp"
+        android:padding="2dp"
+        android:gravity="top"
+        android:hint="@string/translated_text_hint"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
